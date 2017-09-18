@@ -1,6 +1,6 @@
 package database;
 
-import molel.Mac;
+import model.Mac;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,14 +16,18 @@ public class Storage {
         return list;
     }
 
-    public void addMac(Mac mac) {
+    public static void addMac(Mac mac) {
         list.add(mac);
     }
 
     /**
      * @return first element of mac list to controller.
      */
-    private String getFirstMac() { // todo do not change private and implements from controller to here
-        return null;
+    private static String getFirstMac() { // todo do not change private and implements from controller to here
+        if(list.size() != 0){
+            return list.get(0).getName();
+        } else {
+            return null;
+        }
     }
 }
